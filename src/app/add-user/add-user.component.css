@@ -1,0 +1,30 @@
+html{
+    background-color: #0920467a;
+}
+
+.add-user-card{
+    display:flex;
+    background-color: #9dabc27a;
+    width: 300px;
+    height: 200px;
+    margin:auto;
+    border: 1px solid ;
+    border-radius: 8px;    
+} 
+
+.middle{
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
+.input{
+    display: block;
+    padding: 4px;
+    margin: 4px;
+}
+
+.button{
+    display: block;
+    margin: auto;
+}

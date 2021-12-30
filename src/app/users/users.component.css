@@ -1,0 +1,18 @@
+.table{
+    display: table;
+    margin: auto;
+}
+
+.row{
+    margin: 0;
+    display: table-row;
+    
+}
+
+.userInfo{
+    display: table-cell;
+    background-color: #9dabc27a;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 14px;
+}
