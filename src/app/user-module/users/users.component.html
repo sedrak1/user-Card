@@ -1,0 +1,10 @@
+<form class="table" ng-controller="myCtrl">
+    <div *ngFor="let user of users; let i = index" class="row">
+        <div ng-model="text" class="userInfo">{{user.id}}</div>
+        <div ng-model="text" class="userInfo">{{user.firstName}}</div>
+        <div ng-model="text" class="userInfo">{{user.lastName}}</div>
+        <div ng-model="text" class="userInfo">{{user.username}}</div>
+        <button class="edit" routerLink="{{user.id}}">Edit</button>
+        <button class="remove" (click)="deleteUser(user)">Remove</button>
+    </div>
+</form>

@@ -1,0 +1,39 @@
+.table{
+    display: table;
+    margin: auto;
+}
+
+.row{
+    margin: 0;
+    display: table-row;
+    
+}
+
+.userInfo{
+    display: table-cell;
+    background-color: #9dabc27a;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 14px;
+}
+
+.edit{
+    padding: 14px;
+    border-radius: 3px;
+    border: 1px solid gray;
+    background-color: #4be9367a;
+}
+.edit:hover{
+    background-color: #4be936b7;
+    cursor: pointer;
+}
+.remove{
+    padding: 14px;
+    border-radius: 3px;
+    border: 1px solid gray;
+    background-color: #e936367a;
+}
+.remove:hover{
+    background-color: #e93636b0;
+    cursor: pointer;
+}

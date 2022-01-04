@@ -1,0 +1,15 @@
+<form [formGroup]="profileForm" (ngSubmit)="save()">
+
+  <label for="firstName">First Name: </label>
+  <input required="true" id="firstName" type="text" formControlName="firstName">
+
+  <label for="lastName">Last Name: </label>
+  <input required="true" id="lastName" type="text" formControlName="lastName">
+
+  <label for="username">Username: </label>
+  <input required="true" id="username" type="text" formControlName="username">
+
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+</form>
+

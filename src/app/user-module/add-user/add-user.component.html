@@ -1,0 +1,27 @@
+<!-- <form class="background">
+    <div class="add-user-card">
+        <div class="middle">
+            <input (input)="addUserName($event)"  class="input" type="text" placeholder="User Name">
+            <input (input)="addFirstName($event)" class="input" type="text" placeholder="First Name">
+            <input (input)="addLastName($event)" class="input" type="text" placeholder="Last Name">
+            <button (click)="foo()" class="button">Add User</button>
+        </div>
+    </div>
+</form> -->
+
+<form class="add-user-card" [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+    <div class="middle">
+
+        <label class="input" for="firstName">First Name: </label>
+        <input class="input" required="true" id="firstName" type="text" formControlName="firstName">
+        
+        <label class="input" for="lastName">Last Name: </label>
+        <input class="input" required="true" id="lastName" type="text" formControlName="lastName">
+        
+        <label class="input" for="username">Username: </label>
+        <input class="input" required="true" id="username" type="text" formControlName="username">
+        
+        <button  type="submit" [disabled]="!addUserForm.valid" >Submit</button>
+    </div>
+
+</form>
