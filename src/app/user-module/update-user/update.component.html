@@ -1,15 +1,17 @@
-<form [formGroup]="profileForm" (ngSubmit)="save()">
+<h2 style="text-align: center;">User Profile</h2>
 
-  <label for="firstName">First Name: </label>
-  <input required="true" id="firstName" type="text" formControlName="firstName">
+<form class="form"  (ngSubmit)="save()">
+  <div class="div" [formGroup]="profileForm">
 
-  <label for="lastName">Last Name: </label>
-  <input required="true" id="lastName" type="text" formControlName="lastName">
-
-  <label for="username">Username: </label>
-  <input required="true" id="username" type="text" formControlName="username">
-
-  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
-
+    <label class="inner" for="firstName">First Name: </label>
+    <input class="inner" required="true" id="firstName" type="text" formControlName="firstName">
+    
+    <label class="inner" for="lastName">Last Name: </label>
+    <input class="inner" required="true" id="lastName" type="text" formControlName="lastName" >
+    
+    <label class="inner" for="username">Username: </label>
+    <input class="inner" required="true" id="username" type="text" formControlName="username">
+    
+    <button type="submit" [disabled]="!profileForm.valid">Save changes</button>
+  </div>
 </form>
-

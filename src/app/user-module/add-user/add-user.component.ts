@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import { User } from '../../user';
 import { UserService } from '../services/user.service';
 
@@ -29,6 +28,6 @@ export class AddUserComponent implements OnInit {
   }
 
   add(user: User): void {
-    this.userService.addUser(user).subscribe(()=>console.log(RouterLink));
+    this.userService.addUser(user).subscribe();
   }
 }

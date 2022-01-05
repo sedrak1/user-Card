@@ -18,7 +18,7 @@
 }
 
 .edit{
-    padding: 14px;
+    padding: 16px;
     border-radius: 3px;
     border: 1px solid gray;
     background-color: #4be9367a;
@@ -28,7 +28,7 @@
     cursor: pointer;
 }
 .remove{
-    padding: 14px;
+    padding: 16px;
     border-radius: 3px;
     border: 1px solid gray;
     background-color: #e936367a;

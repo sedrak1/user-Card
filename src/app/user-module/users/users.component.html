@@ -1,5 +1,6 @@
+<input class="search" (input)="search($event)" type="text" placeholder="Search user">
 <form class="table" ng-controller="myCtrl">
-    <div *ngFor="let user of users; let i = index" class="row">
+    <div *ngFor="let user of usersCopy;" class="row">
         <div ng-model="text" class="userInfo">{{user.id}}</div>
         <div ng-model="text" class="userInfo">{{user.firstName}}</div>
         <div ng-model="text" class="userInfo">{{user.lastName}}</div>

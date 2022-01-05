@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
 import { User } from '../../user';
 
 @Injectable({
@@ -36,6 +35,13 @@ export class UserService {
 
   getUser(id: number): Observable<User> {
     const url = `${this.usersUrl}/${id}`;
-    return this.http.get<User>(url)
+    return this.http.get<User>(url);
+  }
+
+  searchUsers(term: string): Observable<User[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<User[]>(`${this.usersUrl}/?name=${term}`)
   }
 }
