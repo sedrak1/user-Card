@@ -15,9 +15,11 @@
     border: 1px solid gray;
     border-radius: 3px;
     padding: 14px;
+    margin: auto;    
 }
 
 .edit{
+    display: table-cell;
     padding: 16px;
     border-radius: 3px;
     border: 1px solid gray;
@@ -28,6 +30,7 @@
     cursor: pointer;
 }
 .remove{
+    display: table-cell;
     padding: 16px;
     border-radius: 3px;
     border: 1px solid gray;
@@ -36,4 +39,9 @@
 .remove:hover{
     background-color: #e93636b0;
     cursor: pointer;
+}
+
+.div{
+    background-color: #9dabc27a;
+    display: flex;
 }

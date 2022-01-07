@@ -12,6 +12,6 @@
     <label class="inner" for="username">Username: </label>
     <input class="inner" required="true" id="username" type="text" formControlName="username">
     
-    <button type="submit" [disabled]="!profileForm.valid">Save changes</button>
+    <button type="submit" (ngSubmit)="save()"  [disabled]="!profileForm.valid">Save changes</button>
   </div>
 </form>

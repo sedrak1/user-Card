@@ -1,11 +1,13 @@
-<input class="search" (input)="search($event)" type="text" placeholder="Search user">
-<form class="table" ng-controller="myCtrl">
-    <div *ngFor="let user of usersCopy;" class="row">
-        <div ng-model="text" class="userInfo">{{user.id}}</div>
-        <div ng-model="text" class="userInfo">{{user.firstName}}</div>
-        <div ng-model="text" class="userInfo">{{user.lastName}}</div>
-        <div ng-model="text" class="userInfo">{{user.username}}</div>
-        <button class="edit" routerLink="{{user.id}}">Edit</button>
-        <button class="remove" (click)="deleteUser(user)">Remove</button>
+<input class="search" [(ngModel)]="searchText"  type="text" placeholder="Search user">
+<form  class="table">
+    <div *ngFor="let user of users" class="row">
+        <div class="div" *ngIf="search(user)">
+            <div class="userInfo">{{user.id}}</div>
+            <div class="userInfo">{{user.firstName}}</div>
+            <div class="userInfo">{{user.lastName}}</div>
+            <div class="userInfo">{{user.username}}</div>
+            <button class="edit" routerLink="{{user.id}}">Edit</button>
+            <button class="remove" (click)="deleteUser(user)">Remove</button>
+        </div>
     </div>
 </form>

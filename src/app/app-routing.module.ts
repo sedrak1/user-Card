@@ -4,6 +4,7 @@ import { UsersComponent } from './user-module/users/users.component';
 import { UsersModule } from './user-module/users.module';
 import { HomeComponent } from './home/home.component';
 import { AddUserComponent } from './user-module/add-user/add-user.component';
+import { query } from '@angular/animations';
 
 const routes: Routes = [
   { path: 'users', component: UsersComponent },

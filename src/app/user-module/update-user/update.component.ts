@@ -21,7 +21,11 @@ export class UpdateComponent implements OnInit {
   ) {
     
   }
-  profileForm:any
+  profileForm = new FormGroup({
+        firstName: new FormControl(this.user.firstName),
+        lastName: new FormControl(this.user.lastName),
+        username: new FormControl(this.user.username),
+      });
 
 
   fields = new FormArray([
