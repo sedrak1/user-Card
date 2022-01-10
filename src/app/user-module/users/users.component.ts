@@ -1,5 +1,3 @@
-import { query } from '@angular/animations';
-import { parseI18nMeta } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -13,55 +11,44 @@ import { UserService } from '../services/user.service';
 })
 export class UsersComponent implements OnInit {
   users: User[] = [];
-  param: string = location.search
+  usersCopy: User[] = [];
+  param: string = location.search;
   searchText: string = ""
 
   id = 0;
   constructor(
     private userService: UserService,
-    private route: ActivatedRoute,
     private router: Router,
-  ) {
-    this.route.queryParams.subscribe((params) => {
-      console.log(params);
-      
-      let date = params['search'];
-      console.log(date); // Print the parameter to the console.
-    });
-  }
+    private route: ActivatedRoute
+  ) {}
 
   getUsers(): void {
-    this.userService.getUsers().subscribe((user) => (this.users = user));
+    this.userService
+      .getUsers()
+      .subscribe((user) => ((this.users = user), (this.usersCopy = user), this.search()));
   }
 
   ngOnInit(): void {
     this.getUsers();
+    this.searchText = this.route.snapshot.queryParams['search'] || ""
   }
 
   deleteUser(user: User): void {
     this.users = this.users.filter((u) => u !== user);
     this.userService.deleteUser(user.id).subscribe();
   }
-  
-  changeParams(){
-    location.href = "users" + this.param + this.searchText
-    console.log(location.href);
-  }
 
-  search(user: any, ): any {
-   
-    this.router.navigate(["/mypath"], {
+  search(): void {
+    console.log(1);
+    
+    this.router.navigate([], {
       queryParamsHandling: 'merge',
-      queryParams: { search: "Asd" },
-      skipLocationChange: true,
+      queryParams: { search: encodeURI(this.searchText) },
     });
-    if (
-      (user.firstName + ' ' + user.lastName + ' ' + user.username)
+    this.usersCopy = this.users.filter((u) => {
+      return (u.firstName + ' ' + u.lastName + ' ' + u.username)
         .toLowerCase()
-        .includes(this.searchText.toLowerCase())
-    ) {
-      return true;
-    }
-    return false;
+        .includes(this.searchText.toLowerCase());
+    });
   }
 }

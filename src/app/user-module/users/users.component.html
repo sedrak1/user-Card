@@ -1,13 +1,12 @@
-<input class="search" [(ngModel)]="searchText"  type="text" placeholder="Search user">
+<input class="search" value="searchText" [(ngModel)]="searchText" (input)="search()" type="text" placeholder="Search user">
+<!-- <button (click)="search()">Search</button> -->
 <form  class="table">
-    <div *ngFor="let user of users" class="row">
-        <div class="div" *ngIf="search(user)">
-            <div class="userInfo">{{user.id}}</div>
-            <div class="userInfo">{{user.firstName}}</div>
-            <div class="userInfo">{{user.lastName}}</div>
-            <div class="userInfo">{{user.username}}</div>
-            <button class="edit" routerLink="{{user.id}}">Edit</button>
-            <button class="remove" (click)="deleteUser(user)">Remove</button>
-        </div>
+    <div *ngFor="let user of usersCopy" class="row">
+        <div class="userInfo">{{user.id}}</div>
+        <div class="userInfo">{{user.firstName}}</div>
+        <div class="userInfo">{{user.lastName}}</div>
+        <div class="userInfo">{{user.username}}</div>
+        <button class="edit" routerLink="{{user.id}}">Edit</button>
+        <button class="remove" (click)="deleteUser(user)">Remove</button>
     </div>
 </form>

@@ -5,7 +5,6 @@ import { UpdateComponent } from './update-user/update.component';
 import { UsersComponent } from './users/users.component';
  
 const UsersRouting: Routes = [
-  { path: 'users/:?search=', component: UsersComponent },
   { path: 'users/:id', component: UpdateComponent },
   
 ];

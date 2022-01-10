@@ -1,7 +1,8 @@
 <h2 style="text-align: center;">User Profile</h2>
 
 <form class="form"  (ngSubmit)="save()">
-  <div class="div" [formGroup]="profileForm">
+  <ng-container  [formGroup]="profileForm">
+  <div class="div">
 
     <label class="inner" for="firstName">First Name: </label>
     <input class="inner" required="true" id="firstName" type="text" formControlName="firstName">
@@ -13,5 +14,13 @@
     <input class="inner" required="true" id="username" type="text" formControlName="username">
     
     <button type="submit" (ngSubmit)="save()"  [disabled]="!profileForm.valid">Save changes</button>
+    <div formArrayName="otherInfoArr" 
+    *ngFor="let item of activitiesControls.controls; let i=index">
+    <input class="inner" id="activity-{{ i }}" type="text" [formControlName]="i">
   </div>
+</div>
+  </ng-container>
+  <button type="button" (click)="addField()">Add Field</button>
 </form>
+
+

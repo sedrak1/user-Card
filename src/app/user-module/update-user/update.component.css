@@ -2,7 +2,7 @@
     display:flex;
     background-color: #4be9367a;
     width: 300px;
-    height: 250px;
+    height: auto;
     margin:auto;
     border: 1px solid ;
     border-radius: 8px;    
